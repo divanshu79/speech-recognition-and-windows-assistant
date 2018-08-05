@@ -9,19 +9,10 @@ new = 2
 import requests
 from bs4 import BeautifulSoup
 import pyglet
-##os.environ["HTTPS_PROXY"] = "https://ipg_2014037:79971521@192.168.1.107:3128"
-##os.environ["HTTP_PROXY"] = "https://ipg_2014037:79971521@192.168.1.107:3128"
-##pyglet.lib.load_library('avbin')
-##pyglet.have_avbin=True
 
 def speak(audioString):
     print(audioString)
     ################################### Way 1 ############################################
-##    tts = gTTS(text=audioString, lang='en')
-##    filename = 'audio'
-##    tts.save(filename+'.mp3')
-####    os.system("start audio.mp3")
-##    os.startfile("audio.mp3")
     tts = gTTS(text=audioString, lang='en')
     filename = 'temp.mp3'
     tts.save(filename)
@@ -33,9 +24,6 @@ def speak(audioString):
     os.remove(filename)
 
     ################################# Way 2 ####################################
-    # engine = pyttsx3.init()
-    # engine.say(audioString)
-    # engine.runAndWait()
  
 def recordAudio():
     r = sr.Recognizer()
@@ -127,7 +115,7 @@ def jarvis(data):
 
 
 time.sleep(2)
-speak("Hi Rahul, what can I do for you?")
+speak("Hi Divanshu, what can I do for you?")
 
 while 1:
     data = recordAudio()
